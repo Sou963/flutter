@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -10,41 +10,44 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            actions: [
-              Icon(
-                Icons.arrow_forward,
-                color: Colors.green,
-              ),
-              Icon(
-                Icons.menu,
-                color: Colors.white,
-                size: 30.0,
-              )
-            ],
-            title: Text("Flutter App"),
-            centerTitle: true,
-            elevation: 20,
-            backgroundColor: Colors.purple,
-            titleTextStyle: TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.w700,
-                color: Colors.white),
-            toolbarHeight: 100.0,
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text(
+            "apple",
           ),
-          body: Center(
-            child: Text(
-              "oi kira",
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.w700,
-              ),
+          centerTitle: true,
+          elevation: 0,
+          leading: Icon(Icons.favorite, size: 50, color: Colors.red),
+          actions: [
+            Icon(Icons.favorite, size: 60, color: Colors.red),
+          ],
+        ),
+        body: Center(
+          child: Container(
+            height: 300,
+            width: 300,
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 9, 111, 194),
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.2),
+                  blurRadius: 10,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: const Icon(
+              Icons.favorite,
+              size: 80,
+              color: Colors.white,
             ),
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
